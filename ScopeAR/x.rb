@@ -21,25 +21,11 @@ class X
 		puts "\n"
 		mid = (@height/2.0).ceil
 		for line in 1..@height
-			width = (mid - line).abs * 4 + 1
-			space = (@height - ((mid - line).abs * 2 + 1)).abs
-			puts " " * space + "X" + (width > 1 ? " " * (width - 2) + "X2" : "")
-
-
-			# space = " " * (@height - h)
-			# tree = "*" * (h * 2 - 1)
-			# puts space + tree
-
-		# 	x0 = line < mid ? line : @height - (line - 1)
-		# 	x1 = line < mid ? @height - line - line : 2 * (line - mid) - 1
-		# 	puts " " * x0 + "*" + (x1 > 0 ? " " * x1 + "*" : "")
+			space0 = (mid - (mid-line).abs).abs
+			space1 = (mid - line).abs * 2 - 1
+			puts space1 > 0 ?
+				 "  " * space0 + "X " + "  " * space1 + "X" :
+				 "  " * space0 + "X"
 		end
 	end
 end
-
-
-# 1	xooox	5
-# 2	 xox	3
-# 3	  x 	1
-# 4	 xox 	3
-# 5	xooox 	5
