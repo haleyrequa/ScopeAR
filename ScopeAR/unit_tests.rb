@@ -6,26 +6,36 @@ require './x'
 # Unit Test Class tests the methods from the Christmas Tree Class and the X Class
 class UnitTests < Test::Unit::TestCase
 
-	# # Christmas Tree test method - when height prompt method isn't called to initialize height: 
-	# def test_christmas_draw_without_prompt
-	# 	@christmas_tree = ChristmasTree.new
-	# 	@christmas_tree.draw
-	# end
+	# Christmas Tree test method - when height prompt method isn't called to initialize height: 
+	def test_christmas_draw_without_prompt
+		@christmas_tree = ChristmasTree.new
+		@christmas_tree.draw
+	end
 
-	# # X test method - when height prompt method isn't called to initialize height: 
-	# def test_x_draw_without_prompt
-	# 	@x = X.new
-	# 	@x.draw
-	# end
+	# X test method - when height prompt method isn't called to initialize height: 
+	def test_x_draw_without_prompt
+		@x = X.new
+		@x.draw
+	end
 
 	# Christmas tree test method - when height prompt method isn't given a interger: 
 	def test_christmas_draw_without_height
 		@christmas_tree = ChristmasTree.new
 		with_stdin do |user|
-			user.puts "user_input0"
-			assert_equal(@christmas_tree.promptHeight, "user_input")
+			user.puts "Fake user input string"
+			assert_equal(@christmas_tree.promptHeight, 0)
 		end
-		# @christmas_tree.draw
+		@christmas_tree.draw
+	end
+
+	# X test method - when height prompt method isn't given a interger: 
+	def test_x_draw_without_height
+		@x = X.new
+		with_stdin do |user|
+			user.puts "Fake user input string"
+			assert_equal(@x.promptHeight, 0)
+		end
+		@x.draw
 	end
 
 	# This code "with_stdin" was referenced from 
