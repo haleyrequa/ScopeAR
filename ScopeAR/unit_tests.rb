@@ -18,8 +18,8 @@ class UnitTests < Test::Unit::TestCase
 		@x.draw
 	end
 
-	# Christmas tree test method - when height prompt method isn't given a interger: 
-	def test_christmas_draw_without_height
+	# Christmas tree test method - when height prompt method isn't given a integer: 
+	def test_christmas_draw_with_wrong_input
 		@christmas_tree = ChristmasTree.new
 		with_stdin do |user|
 			user.puts "Fake user input string"
@@ -28,8 +28,8 @@ class UnitTests < Test::Unit::TestCase
 		@christmas_tree.draw
 	end
 
-	# X test method - when height prompt method isn't given a interger: 
-	def test_x_draw_without_height
+	# X test method - when height prompt method isn't given a integer: 
+	def test_x_draw_with_wrong_input
 		@x = X.new
 		with_stdin do |user|
 			user.puts "Fake user input string"
